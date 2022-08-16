@@ -33,11 +33,16 @@ public class Main {
         System.out.println("Задание № 2");
 
         int[] spending = generateRandomArray();
-        int min = Arrays.stream(spending).min().getAsInt();
-        int max = Arrays.stream(spending).max().getAsInt();
-        System.out.println("Минимальная сумма трат за день составила  " + min + "  рублей");
-        System.out.println("Максимальная  сумма трат за день составила  " + max + "  рублей ");
-
+        int max = spending[0];
+        int min = spending[0];
+        for (int j : spending) {
+            if (j > max)
+                max = j;
+            if(j<min)
+                min=j;
+        }
+        System.out.println(" Максимальная сумма трат за день составила " + max + " рублей ");
+        System.out.println(" Минимальная сумма трат за день составила " + min + " рублей ");
 
         //Task 3
         System.out.println();
